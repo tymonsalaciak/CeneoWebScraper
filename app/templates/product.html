@@ -1,6 +1,8 @@
-{% bextends 'base.html' %}
-{% block title %}OOpinie o produkcie{% endblock %}
+{% extends 'base.html' %}
+{% block title %}Opinie o produkcie{% endblock %}
 {% block content %}
+<h3>{{product_code}}</h3>
+{{opinions|safe}}
 <table id='opinions' class="table table-striped table-success">
     <thead>
         <tr>
@@ -20,13 +22,10 @@
     </tbody>
 </table>
 {% endblock %}
-{% block scripts %}         
-					
-
-        <script>
-            $(document).ready( function () {
-                $('#opinions').DataTable();
-            } );
-        </script>
-    </body>
+{% block scripts %}
+<script>
+    $(document).ready( function () {
+        $('#opinions').DataTable();
+    } );
+</script>
 {% endblock %}
